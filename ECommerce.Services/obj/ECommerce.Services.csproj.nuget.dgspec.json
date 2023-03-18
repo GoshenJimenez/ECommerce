@@ -1,0 +1,334 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.Services\\ECommerce.Services.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.Contracts\\ECommerce.Contracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.Contracts\\ECommerce.Contracts.csproj",
+        "projectName": "ECommerce.Contracts",
+        "projectPath": "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.Contracts\\ECommerce.Contracts.csproj",
+        "packagesPath": "C:\\Users\\Goshen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.Contracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Goshen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.Data\\ECommerce.Data.csproj": {
+                "projectPath": "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.Data\\ECommerce.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "System.Linq.Dynamic.Core": {
+              "target": "Package",
+              "version": "[1.3.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.Data\\ECommerce.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.Data\\ECommerce.Data.csproj",
+        "projectName": "ECommerce.Data",
+        "projectPath": "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.Data\\ECommerce.Data.csproj",
+        "packagesPath": "C:\\Users\\Goshen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Goshen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.EntityFramework\\ECommerce.EntityFramework.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.EntityFramework\\ECommerce.EntityFramework.csproj",
+        "projectName": "ECommerce.EntityFramework",
+        "projectPath": "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.EntityFramework\\ECommerce.EntityFramework.csproj",
+        "packagesPath": "C:\\Users\\Goshen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.EntityFramework\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Goshen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.Data\\ECommerce.Data.csproj": {
+                "projectPath": "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.Data\\ECommerce.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.Services\\ECommerce.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.Services\\ECommerce.Services.csproj",
+        "projectName": "ECommerce.Services",
+        "projectPath": "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.Services\\ECommerce.Services.csproj",
+        "packagesPath": "C:\\Users\\Goshen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Goshen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.Contracts\\ECommerce.Contracts.csproj": {
+                "projectPath": "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.Contracts\\ECommerce.Contracts.csproj"
+              },
+              "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.SqlServer\\ECommerce.MySql.csproj": {
+                "projectPath": "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.SqlServer\\ECommerce.MySql.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.SqlServer\\ECommerce.MySql.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.SqlServer\\ECommerce.MySql.csproj",
+        "projectName": "ECommerce.MySql",
+        "projectPath": "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.SqlServer\\ECommerce.MySql.csproj",
+        "packagesPath": "C:\\Users\\Goshen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.SqlServer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Goshen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.Contracts\\ECommerce.Contracts.csproj": {
+                "projectPath": "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.Contracts\\ECommerce.Contracts.csproj"
+              },
+              "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.EntityFramework\\ECommerce.EntityFramework.csproj": {
+                "projectPath": "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.EntityFramework\\ECommerce.EntityFramework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

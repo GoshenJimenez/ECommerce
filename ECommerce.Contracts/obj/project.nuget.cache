@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "Al3tH2yWhxIJ4Q44A4F4uQrgpuc9Zd63278bsfKxfPO+btu8YAnZF3z78Y0noEoCEFTiPuHvVr/0qyqEYN/kUQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Goshen\\Documents\\CSM\\Github\\ECommerce\\ECommerce.Contracts\\ECommerce.Contracts.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Goshen\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\Goshen\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
+    "C:\\Users\\Goshen\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Goshen\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Goshen\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\Goshen\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\Goshen\\.nuget\\packages\\system.linq.dynamic.core\\1.3.1\\system.linq.dynamic.core.1.3.1.nupkg.sha512",
+    "C:\\Users\\Goshen\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
