@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ECommerce.EntityFramework.Migrations
 {
     [DbContext(typeof(DefaultDbContext))]
-    [Migration("20230318124027_init")]
+    [Migration("20230415054803_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -21,6 +21,42 @@ namespace ECommerce.EntityFramework.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
+
+            modelBuilder.Entity("ECommerce.Data.Models.Others.Car", b =>
+                {
+                    b.Property<Guid?>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<Guid?>("CreatedByUserId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("Make")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Manufacturer")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<Guid?>("UpdatedUserId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<int?>("Year")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedByUserId");
+
+                    b.HasIndex("UpdatedUserId");
+
+                    b.ToTable("Cars");
+                });
 
             modelBuilder.Entity("ECommerce.Data.Models.User", b =>
                 {
@@ -56,6 +92,21 @@ namespace ECommerce.EntityFramework.Migrations
                     b.HasIndex("UpdatedUserId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("ECommerce.Data.Models.Others.Car", b =>
+                {
+                    b.HasOne("ECommerce.Data.Models.User", "CreatedByUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedByUserId");
+
+                    b.HasOne("ECommerce.Data.Models.User", "UpdatedByUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedUserId");
+
+                    b.Navigation("CreatedByUser");
+
+                    b.Navigation("UpdatedByUser");
                 });
 
             modelBuilder.Entity("ECommerce.Data.Models.User", b =>

@@ -1,0 +1,116 @@
+﻿@page
+@model ECommerce.Web.Pages.Manage.Cars.Index
+@{
+}
+
+
+
+<h3>Cars</h3>
+
+<div class="search">
+    <i class="bi bi-search"></i>
+    <input type="text" class="form-control" placeholder="Search" id="search" value="@Model?.Data?.Cars?.Keyword">
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <div class="form-group">
+            <label for="">Sort By</label>
+            <select class="form-control" id="sortBy" asp-for="Data.Cars.SortBy">
+                <option value="">choose</option>
+                <option value="name">Name</option>
+                <option value="description">Description</option>
+                <option value="abbreviation">Abbreviation</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="form-group">
+            <label for="">Sort Order</label>
+            <select class="form-control" id="sortOrder" asp-for="Data.Cars.SortOrder">
+                <option value="1">Ascending</option>
+                <option value="2">Descending</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+
+
+@{
+    if (Model!.Data != null && Model.Data.Cars != null && Model.Data.Cars.Items != null && Model.Data.Cars.Items.Count > 0)
+    {
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Make</th>
+                    <th scope="col">Manufacturer</th>
+                    <th scope="col">Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var car in Model!.Data!.Cars!.Items)
+                    {
+                        <tr>
+                            <th scope="row">@car.Make</th>
+                            <td>@car.Manufacturer</td>
+                            <td>@car.Year</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                @{
+                    if (Model?.Data?.Cars.PageIndex > 1)
+                    {
+                        <li class="page-item"><a class="page-link" href="/manage/cars?pageIndex=@(Model?.Data?.Cars.PageIndex-1)&pageSize=@(Model?.Data?.Cars.PageSize)&sortBy=@(Model?.Data?.Cars.SortBy)&sortOrder=@(Model?.Data?.Cars.SortOrder)">Previous</a></li>
+                    }
+
+                    <li class="page-item"><span class="page-link">page @Model?.Data?.Cars.PageIndex of @Model?.Data?.Cars.PageCount (@Model?.Data?.Cars.TotalRows total rows)</span></li>
+
+
+                    if (Model?.Data?.Cars.PageIndex < Model?.Data?.Cars.PageCount)
+                    {
+                        <li class="page-item"><a class="page-link" href="/manage/cars?pageIndex=@(Model?.Data?.Cars.PageIndex+1)&pageSize=@(Model?.Data?.Cars.PageSize)&sortBy=@(Model?.Data?.Cars.SortBy)&sortOrder=@(Model?.Data?.Cars.SortOrder)">Next</a></li>
+                    }
+                }
+            </ul>
+        </nav>
+    }
+    else
+    {
+        <div>There are no records to show.</div>
+    }
+}
+
+@section Scripts
+    {
+    <script>
+        $(document).ready(function () {
+
+        });
+
+
+        $("#search").keyup(function (event) {
+            if (event.keyCode === 13) {
+                window.location = "/manage/cars?keyword=" + $("#search").val();
+            }
+        });
+
+        $("#sortBy").change(function () {
+            window.location = "/manage/cars?keyword=@(Model!.Data!.Cars!.Keyword)&sortBy=" + $("#sortBy").val() + "&sortOrder=" + $("#sortOrder").val();
+        });
+
+        $("#sortOrder").change(function () {
+            window.location = "/manage/cars?keyword=@(Model!.Data!.Cars!.Keyword)&sortBy=" + $("#sortBy").val() + "&sortOrder=" + $("#sortOrder").val();
+        });
+
+        $("#roleId").change(function () {
+            window.location = "/manage/cars?keyword=@(Model!.Data!.Cars!.Keyword)&sortBy=" + $("#sortBy").val() + "&sortOrder=" + $("#sortOrder").val();
+        });
+    </script>
+}

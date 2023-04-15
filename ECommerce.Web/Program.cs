@@ -1,6 +1,8 @@
 using ECommerce.Contracts;
+using ECommerce.Contracts.Cars;
 using ECommerce.Contracts.Users;
 using ECommerce.Data.Models;
+using ECommerce.Data.Models.Others;
 using ECommerce.EntityFramework;
 using ECommerce.MySql.Infrastructure;
 using ECommerce.Services;
@@ -27,10 +29,12 @@ builder.Services.AddDbContext<DefaultDbContext>(dbContextOptions => dbContextOpt
 );
 
 builder.Services.AddScoped(typeof(IRepository<User>), typeof(Repository<User>));
+builder.Services.AddScoped(typeof(IRepository<Car>), typeof(Repository<Car>));
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 builder.Services.AddScoped(typeof(IUserService), typeof(UserService));
+builder.Services.AddScoped(typeof(ICarService), typeof(CarService));
 
 builder.Services.AddSession(options =>
 {

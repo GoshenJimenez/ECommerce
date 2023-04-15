@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.MySql", "ECommerc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Services", "ECommerce.Services\ECommerce.Services.csproj", "{FED2F0E3-11D3-4FB3-8AE1-5FDF2D88E00D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.EntityFramework", "ECommerce.EntityFramework\ECommerce.EntityFramework.csproj", "{9DB3242D-35B9-4FF1-A733-D6C75E843D4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.EntityFramework", "ECommerce.EntityFramework\ECommerce.EntityFramework.csproj", "{9DB3242D-35B9-4FF1-A733-D6C75E843D4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

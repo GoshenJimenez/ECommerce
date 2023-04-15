@@ -1,4 +1,5 @@
 ﻿using ECommerce.Data.Models;
+using ECommerce.Data.Models.Others;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
@@ -12,5 +13,6 @@ namespace ECommerce.EntityFramework
         }
 
         public DbSet<User>? Users { get; set; }
+        public DbSet<Car>? Cars { get; set; }
     }
 }
