@@ -17,5 +17,7 @@ namespace ECommerce.Contracts.Cars
                              string? keyword = "");
 
         Guid? Create(CarDto? dto);
+        Guid? Update(CarDto? dto);
+        CarDto? GetById(Guid? carId);
     }
 }

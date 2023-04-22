@@ -56,6 +56,60 @@ namespace ECommerce.Services
             return Guid.Empty;
         }
 
+        public Guid? Update(CarDto? dto)
+        {
+            try
+            {
+                if (dto != null)
+                {
+                    var car = _carRepository
+                            .All()
+                            .FirstOrDefault(a => a.Id == dto.Id);
+
+                    if (car != null)
+                    {
+                        car.UpdatedUserId = Guid.Parse("611b4f9a-777a-4ddd-a089-6f2ca81ec18e");
+                        car.UpdatedAt = DateTime.Now;
+                        car.Make = dto!.Make;
+                        car.Manufacturer = dto!.Manufacturer;
+                        car.Year = dto!.Year;
+
+                        _carRepository.Update(car);
+                        _carRepository.SaveChangesAsync();
+
+                        return car.Id;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.Log(LogLevel.Error, e.Message);
+            }
+
+            return Guid.Empty;
+        }
+
+        public CarDto? GetById(Guid? carId)
+        {
+            if (carId != null)
+            {
+                return _carRepository
+                            .All()
+                            .Where(a => a.Id == carId)
+                            .Select(a => new CarDto()
+                            {
+                                Id = a.Id,
+                                Make = a.Make,
+                                Manufacturer = a.Manufacturer,
+                                Year = a.Year
+                            })
+                            .FirstOrDefault();
+
+            }
+
+            return null;
+        }
+
         public Paged<CarDto> Search(int? pageIndex = 1, int? pageSize = 10, string? sortBy = "", SortOrder sortOrder = SortOrder.Ascending, string? keyword = "")
         {
 
