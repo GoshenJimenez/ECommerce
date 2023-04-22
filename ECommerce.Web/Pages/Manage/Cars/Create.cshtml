@@ -1,0 +1,28 @@
+﻿@page
+@model ECommerce.Web.Pages.Manage.Cars.Create
+@{
+}
+
+
+<form method="POST">
+    <div class="form-group">
+        @Html.ValidationSummary()
+    </div>
+    <div class="form-group">
+        <label asp-for="Data.Car!.Make">Make</label>
+        <input type="text" class="form-control" id="make" aria-describedby="carMakeHelp" placeholder="Enter make" asp-for="Data.Car!.Make">
+        <small id="carMakeHelp" class="form-text text-muted">Make of the car is required.</small>
+    </div>
+    <div class="form-group">
+        <label asp-for="Data.Car!.Manufacturer">Manufacturer</label>
+        <input type="text" class="form-control" id="manufacturer" aria-describedby="carManufacturerHelp" placeholder="Enter manufacturer" asp-for="Data.Car!.Manufacturer">
+        <small id="carManufacturerHelp" class="form-text text-muted">Manufacturer of the car is required.</small>
+    </div>
+    <div class="form-group">
+        <label asp-for="Data.Car!.Year">Year</label>
+        <input type="text" class="form-control" id="year" aria-describedby="carYearHelp" placeholder="Enter year" asp-for="Data.Car!.Year">
+        <small id="carYearHelp" class="form-text text-muted">Year of the car is required.</small>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="~/manage/cars" class="btn btn-danger">Back</a>
+</form>

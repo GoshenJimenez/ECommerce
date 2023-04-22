@@ -24,6 +24,38 @@ namespace ECommerce.Services
             _carRepository = carRepository;
         }
 
+        public Guid? Create(CarDto? dto)
+        {
+            try
+            {
+                if (dto != null)
+                {
+                    var car = new Car()
+                    {
+                        Id = Guid.NewGuid(),
+                        CreatedByUserId = Guid.Parse("611b4f9a-777a-4ddd-a089-6f2ca81ec18e"),
+                        UpdatedUserId = Guid.Parse("611b4f9a-777a-4ddd-a089-6f2ca81ec18e"),
+                        CreatedAt = DateTime.Now,
+                        UpdatedAt = DateTime.Now,
+                        Make = dto!.Make,
+                        Manufacturer = dto!.Manufacturer,
+                        Year = dto!.Year
+                    };
+
+                    _carRepository.AddAsync(car);
+                    _carRepository.SaveChangesAsync();
+
+                    return car.Id;
+                }
+            }
+            catch(Exception e)
+            {
+                Logger.Log(LogLevel.Error, e.Message);
+            }
+
+            return Guid.Empty;
+        }
+
         public Paged<CarDto> Search(int? pageIndex = 1, int? pageSize = 10, string? sortBy = "", SortOrder sortOrder = SortOrder.Ascending, string? keyword = "")
         {
 

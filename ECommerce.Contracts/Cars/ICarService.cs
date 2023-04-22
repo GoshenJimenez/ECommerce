@@ -16,5 +16,6 @@ namespace ECommerce.Contracts.Cars
                              SortOrder sortOrder = SortOrder.Ascending, 
                              string? keyword = "");
 
+        Guid? Create(CarDto? dto);
     }
 }
