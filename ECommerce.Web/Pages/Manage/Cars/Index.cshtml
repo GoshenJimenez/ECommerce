@@ -64,7 +64,10 @@
                             <th scope="row">@car.Make</th>
                             <td>@car.Manufacturer</td>
                             <td>@car.Year</td>
-                            <td><a href="~/manage/cars/update?id=@car.Id" class="btn btn-primary">Update</a></td>
+                            <td>
+                                <a href="~/manage/cars/update?id=@car.Id" class="btn btn-primary">Update</a>
+                                <a href="~/manage/cars/delete?id=@car.Id" class="btn btn-danger">Delete</a>
+                            </td>
                         </tr>
                     }
                 }
