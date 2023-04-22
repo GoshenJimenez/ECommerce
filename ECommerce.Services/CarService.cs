@@ -172,5 +172,32 @@ namespace ECommerce.Services
                 Keyword = keyword,
             };
         }
+
+        public Guid? Delete(Guid? carId)
+        {
+            try
+            {
+                if (carId != null)
+                {
+                    var car = _carRepository
+                            .All()
+                            .FirstOrDefault(a => a.Id == carId);
+
+                    if (car != null)
+                    {
+                        _carRepository.Delete(car);
+                        _carRepository.SaveChangesAsync();
+
+                        return car.Id;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.Log(LogLevel.Error, e.Message);
+            }
+
+            return Guid.Empty;
+        }
     }
 }

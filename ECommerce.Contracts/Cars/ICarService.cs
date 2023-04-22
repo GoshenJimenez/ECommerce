@@ -18,6 +18,7 @@ namespace ECommerce.Contracts.Cars
 
         Guid? Create(CarDto? dto);
         Guid? Update(CarDto? dto);
+        Guid? Delete(Guid? carId);
         CarDto? GetById(Guid? carId);
     }
 }
