@@ -1,0 +1,22 @@
+﻿@page
+@model ECommerce.Web.Pages.Account.Login
+@{
+}
+
+
+<div class="card">
+    <div class="card-body">
+        <form method="post">
+            <div class="mb-3">
+                <label for="@Model.EmailAddress" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="emailAddress" aria-describedby="emailHelp" asp-for="@Model.EmailAddress">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="@Model.Password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" asp-for="@Model.Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

@@ -30,5 +30,20 @@ namespace ECommerce.Services
 
             return Mapper.Map<List<UserDto>>(entities);
         }
+
+        public UserDto? GetByEmail(string? emailAddress = null)
+        {
+            if (!string.IsNullOrEmpty(emailAddress))
+            {
+                var entity = _userRepository.All().FirstOrDefault(a => a.EmailAddress != null &&  a.EmailAddress!.ToLower() == emailAddress!.ToLower());
+
+                if (entity == null)
+                    return null;
+
+                return Mapper.Map<UserDto>(entity);
+            }
+
+            return null;
+        }
     }
 }

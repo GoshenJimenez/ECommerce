@@ -1,5 +1,6 @@
 using ECommerce.Contracts;
 using ECommerce.Contracts.Cars;
+using ECommerce.Contracts.LoginInfos;
 using ECommerce.Contracts.Users;
 using ECommerce.Data.Models;
 using ECommerce.Data.Models.Others;
@@ -29,11 +30,13 @@ builder.Services.AddDbContext<DefaultDbContext>(dbContextOptions => dbContextOpt
 );
 
 builder.Services.AddScoped(typeof(IRepository<User>), typeof(Repository<User>));
+builder.Services.AddScoped(typeof(IRepository<LoginInfo>), typeof(Repository<LoginInfo>));
 builder.Services.AddScoped(typeof(IRepository<Car>), typeof(Repository<Car>));
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 builder.Services.AddScoped(typeof(IUserService), typeof(UserService));
+builder.Services.AddScoped(typeof(ILoginInfoService), typeof(LoginInfoService));
 builder.Services.AddScoped(typeof(ICarService), typeof(CarService));
 
 builder.Services.AddSession(options =>

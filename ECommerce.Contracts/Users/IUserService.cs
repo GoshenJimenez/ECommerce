@@ -9,5 +9,6 @@ namespace ECommerce.Contracts.Users
     public interface IUserService : IService
     {
         List<UserDto> GetAll();
+        UserDto? GetByEmail(string? emailAddress);
     }
 }

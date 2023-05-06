@@ -108,3 +108,4 @@ C:\Users\Goshen\Documents\CSM\Github\ECommerce\ECommerce.Web\obj\Debug\net7.0\re
 C:\Users\Goshen\Documents\CSM\Github\ECommerce\ECommerce.Web\obj\Debug\net7.0\ECommerce.Web.pdb
 C:\Users\Goshen\Documents\CSM\Github\ECommerce\ECommerce.Web\obj\Debug\net7.0\ECommerce.Web.genruntimeconfig.cache
 C:\Users\Goshen\Documents\CSM\Github\ECommerce\ECommerce.Web\obj\Debug\net7.0\ref\ECommerce.Web.dll
+C:\Users\Goshen\Documents\CSM\Github\ECommerce\ECommerce.Web\bin\Debug\net7.0\BCrypt.Net.dll

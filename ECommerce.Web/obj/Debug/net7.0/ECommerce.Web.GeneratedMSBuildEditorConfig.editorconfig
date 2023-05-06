@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Goshen\Documents\CSM\Github\ECommerce\ECommerce.Web
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Goshen/Documents/CSM/Github/ECommerce/ECommerce.Web/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Goshen/Documents/CSM/Github/ECommerce/ECommerce.Web/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
