@@ -1,9 +1,14 @@
 using ECommerce.Contracts.Cars;
 using ECommerce.Contracts.LoginInfos;
 using ECommerce.Contracts.Users;
+using ECommerce.Data.Models;
 using ECommerce.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Security.Claims;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace ECommerce.Web.Pages.Account
 {
@@ -29,7 +34,7 @@ namespace ECommerce.Web.Pages.Account
         {
         }
 
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPost()
         {
             var user = _userService.GetByEmail(EmailAddress);
 
@@ -45,19 +50,41 @@ namespace ECommerce.Web.Pages.Account
 
                     if (passwordInfo != null)
                     {
-                        var encPassword = BCrypt.Net.BCrypt.HashPassword(Password);
-                        if(passwordInfo.Value != encPassword)
+
+                        if (BCrypt.Net.BCrypt.Verify(Password, passwordInfo.Value))
                         {
-                            if(loginRetriesInfo != null)
+                            if (accountStatusInfo != null)
+                            {
+                                if (accountStatusInfo.Value != null && accountStatusInfo.Value.ToLower() != "active")
+                                {
+                                    ModelState.AddModelError("", "Account is Inactive");
+                                }
+                                else
+                                {
+                                    if (loginRetriesInfo != null)
+                                    {
+                                        loginRetriesInfo.Value = "0";
+                                        _loginInfoService.Upsert(loginRetriesInfo);
+                                    }
+
+                                    await SignIn(user.FullName, user.Id);
+
+
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (loginRetriesInfo != null)
                             {
                                 var loginRetries = (int.Parse(loginRetriesInfo.Value != null ? loginRetriesInfo.Value : "0") + 1);
                                 loginRetriesInfo.Value = loginRetries.ToString();
 
                                 _loginInfoService.Upsert(loginRetriesInfo);
-                                
+
                                 if (loginRetries > 2)
                                 {
-                                    if(accountStatusInfo!= null)
+                                    if (accountStatusInfo != null)
                                     {
                                         accountStatusInfo.Value = "LockedOut";
 
@@ -65,27 +92,8 @@ namespace ECommerce.Web.Pages.Account
                                     }
                                 }
                             }
-                            else
-                            {
-                                if (accountStatusInfo != null)
-                                {
-                                    if(accountStatusInfo.Value != null && accountStatusInfo.Value.ToLower() != "active")
-                                    {
-                                        ModelState.AddModelError("", "Account is Inactive");
-                                    }
-                                    else
-                                    {
-                                        if (loginRetriesInfo != null)
-                                        {
-                                            loginRetriesInfo.Value = "0";
-                                            _loginInfoService.Upsert(loginRetriesInfo);
-                                        }
-
-                                        SignIn();
-                                    }
-                                }
-                            }
                         }
+
                     }
                 }
             }
@@ -93,9 +101,21 @@ namespace ECommerce.Web.Pages.Account
             return Page();
         }
 
-        public void SignIn()
+        public async Task SignIn(string? userName, Guid? userId)
         {
+            List<Claim> claims = new()
+            {
+                new Claim(ClaimTypes.Name, userName!),
+                new Claim(ClaimTypes.NameIdentifier, userId.ToString()!)
+            };
 
+            ClaimsPrincipal principal = new(new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme));
+
+            await HttpContext.SignInAsync(principal, new AuthenticationProperties()
+            {
+                IsPersistent = true,
+                ExpiresUtc = DateTime.Now.AddMinutes(30)
+            });
         }
 
     }
